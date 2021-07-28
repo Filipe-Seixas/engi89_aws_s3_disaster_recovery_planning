@@ -23,14 +23,25 @@ sudo apt-get install python3-pip -y
 	3. Default region name: eu-west-1
 	4. Default output format: json
 
-- List all buckets `aws s3 ls`
-- make an s3 bucket `aws s3 mb s3://eng89filipe --region eu-west-1`
-- create txt file `sudo nano test.txt`
-- Copy a file to bucket `aws s3 cp test.txt s3://eng89filipe/`
-- delete file from ec2 `rm -rf test.txt`
-- download a file from s3 bucket `aws s3 cp s3://eng89filipe/test.txt test1.txt`
-- delete file from s3 bucket `aws s3 rm s3://eng89filipe/test.txt`
-- remove s3 bucket `aws s3 rb s3://eng89filipe`
+
+```bash
+# List all buckets 
+aws s3 ls
+# Make an s3 bucket 
+aws s3 mb s3://eng89filipe --region eu-west-1
+# Create txt file 
+sudo nano test.txt
+# Copy a file to bucket 
+aws s3 cp test.txt s3://eng89filipe/
+# Delete file from ec2 
+rm -rf test.txt
+# Download a file from s3 bucket 
+aws s3 cp s3://eng89filipe/test.txt test1.txt
+# Delete file from s3 bucket 
+aws s3 rm s3://eng89filipe/test.txt
+# Remove s3 bucket 
+aws s3 rb s3://eng89filipe
+```
 
 
 ### TROUBLESHOOTING PYTHON3
@@ -113,3 +124,4 @@ s3.delete_object(Bucket='eng89-filipe-boto3', Key='test1.txt')
 # Delete a bucket
 s3.delete_bucket(Bucket='eng89-filipe-boto3')
 ``` 
+- S3 functions: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#object
